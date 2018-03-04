@@ -1,2 +1,4 @@
 # exclude env directory
 env*
+taskManager/db.sqlite3
+*/__pycache__/*
