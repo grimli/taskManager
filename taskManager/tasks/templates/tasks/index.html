@@ -1,0 +1,13 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'tasks/style.css' %}" />
+
+{% if active_task_list %}
+    <ul>
+    {% for task in active_task_list %}
+        <li><a href="{% url 'detail' task.id %}">{{ task.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No tasks are available.</p>
+{% endif %}
