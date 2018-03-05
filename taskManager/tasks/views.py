@@ -17,6 +17,9 @@ class IndexView(generic.ListView):
         """Return active tasks."""
         return Task.objects.order_by('-creation_date')
 
+class DetailView( generic.DetailView ):
+    model = Task
+    template_name = 'tasks/detail.html'
 
 #class ResultsView(generic.DetailView):
 #    model = Question
