@@ -14,4 +14,4 @@
 # DONE
 1. priority and status should be optional
 1. parent task should be optional
-1. some of the dates shloud have a null default value
+1. some of the dates should have a null default value

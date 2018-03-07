@@ -5,7 +5,7 @@
 {% if active_task_list %}
     <ul>
     {% for task in active_task_list %}
-        <li><a href="{% url 'detail' task.id %}">{{ task.name }}</a></li>
+    <li><a href="{% url 'detail' task.id %}">{{ task.name }}</a> - {{ task.description }}</li>
     {% endfor %}
     </ul>
 {% else %}
