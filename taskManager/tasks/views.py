@@ -17,6 +17,11 @@ class IndexView(generic.ListView):
         """Return active tasks."""
         return Task.objects.order_by('-creation_date')
 
+    def get_contex_data(self, **kwargs ):
+        context=super().get_context_data( **kwargs )
+        context['note']= Task.objects.get(fk_task=self.pk)
+        return context
+    
 class DetailView( generic.DetailView ):
     model = Task
     template_name = 'tasks/detail.html'

@@ -6,6 +6,13 @@
     <ul>
     {% for task in active_task_list %}
     <li><a href="{% url 'detail' task.id %}">{{ task.name }}</a> - {{ task.description }}</li>
+    {% if context.note %}
+      <ul>
+      {% for note in context.note %}
+        <li> {{ note }} </li>
+      {% endfor %}
+      </ul>
+    {% endif %}
     {% endfor %}
     </ul>
 {% else %}

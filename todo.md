@@ -7,8 +7,6 @@
 1. list view should permit to add notes to tasks
 1. list view should permit to delete activities
 1. detailed view sould permit to update contents
-1. 
-
 
 
 # DONE
