@@ -15,7 +15,7 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         """Return active tasks."""
-        return Task.objects.order_by('-creation_date')
+        return Task.objects.filter(fk_parent=None).order_by('-creation_date')
 
  #   def get_contex_data(self, **kwargs ):
  #       context=super(IndexView, self ).get_context_data( **kwargs )

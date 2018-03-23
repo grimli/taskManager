@@ -7,9 +7,12 @@
 1. list view should permit to add notes to tasks
 1. list view should permit to delete activities
 1. detailed view sould permit to update contents
+1. 
 
 
 # DONE
 1. priority and status should be optional
 1. parent task should be optional
 1. some of the dates should have a null default value
+1. list view should show notes
+1. list view should show subtasks

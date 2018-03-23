@@ -1,0 +1,14 @@
+<li><a href="{% url 'detail' task.id %}">{{ task.name }}</a> - {{ task.description }}
+    {% for ch in task.task_set.all %}
+    <ul>
+        {% with task=ch template_name="tasks/l_task.html" %}
+            {% include template_name %}
+        {% endwith %}
+    </ul>
+    {% endfor %}
+</li>
+      {% for note in task.note_set.all %}
+      <ul>
+        <li> {{ note.note }} </li>
+      </ul>
+      {% endfor %}
