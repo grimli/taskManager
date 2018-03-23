@@ -5,7 +5,7 @@ from django.utils import timezone
 class Priority( models.Model ):
     label = models.CharField(max_length=20, unique=True)
     value = models.IntegerField(unique=True)
-    
+
     def __str__(self):
         return self.label
 
@@ -13,7 +13,7 @@ class Priority( models.Model ):
 class Status( models.Model ):
     label = models.CharField(max_length=20, unique=True)
     value = models.IntegerField(unique=True)
-    
+
     def __str__(self):
         return self.label
 
@@ -37,7 +37,7 @@ class Task( models.Model ):
             # last modification date
     # Tag management later
     # Assegnazione task later
-    
+
     def __str__(self):
         return self.name
 
@@ -47,4 +47,3 @@ class Note( models.Model ):
     creation_date = models.DateField(default = timezone.now)
     fk_task = models.ForeignKey( Task, on_delete=models.CASCADE )
 
-    

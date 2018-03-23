@@ -2,17 +2,15 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'tasks/style.css' %}" />
 
-{% if active_task_list %}
+{% if active_tasks_list %}
     <ul>
-    {% for task in active_task_list %}
+    {% for task in active_tasks_list %}
     <li><a href="{% url 'detail' task.id %}">{{ task.name }}</a> - {{ task.description }}</li>
-    {% if context.note %}
+      {% for note in task.note_set.all %}
       <ul>
-      {% for note in context.note %}
-        <li> {{ note }} </li>
-      {% endfor %}
+        <li> {{ note.note }} </li>
       </ul>
-    {% endif %}
+      {% endfor %}
     {% endfor %}
     </ul>
 {% else %}

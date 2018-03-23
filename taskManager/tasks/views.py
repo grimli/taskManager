@@ -11,17 +11,18 @@ class IndexView(generic.ListView):
     model = Task
 
     template_name = 'tasks/index.html'
-    context_object_name = 'active_task_list'
+    context_object_name = 'active_tasks_list'
 
     def get_queryset(self):
         """Return active tasks."""
         return Task.objects.order_by('-creation_date')
 
-    def get_contex_data(self, **kwargs ):
-        context=super().get_context_data( **kwargs )
-        context['note']= Task.objects.get(fk_task=self.pk)
-        return context
-    
+ #   def get_contex_data(self, **kwargs ):
+ #       context=super(IndexView, self ).get_context_data( **kwargs )
+ ##       context['notes']= Note.objects.filter(fk_task=self.pk)
+ #       #context['notes']= self.model.objects.filter(fk_task=self.pk)
+ #       return context
+
 class DetailView( generic.DetailView ):
     model = Task
     template_name = 'tasks/detail.html'
